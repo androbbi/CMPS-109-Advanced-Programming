@@ -1,0 +1,8 @@
+# Antony Robbins androbbi@ucsc.edu
+# Brandon Gomez brlgomez@ucsc.edu
+# Makefile.dep created Sat Jan 24 20:15:45 PST 2015
+bigint.o: bigint.cpp bigint.h debug.h
+scanner.o: scanner.cpp scanner.h debug.h
+debug.o: debug.cpp debug.h util.h
+util.o: util.cpp util.h debug.h
+main.o: main.cpp bigint.h debug.h iterstack.h scanner.h util.h

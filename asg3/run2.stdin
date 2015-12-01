@@ -1,0 +1,50 @@
+==14885== Memcheck, a memory error detector
+==14885== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14885== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==14885== Command: ./keyvalue
+==14885== 
+-: 1: key=value
+key = value
+-: 2: second=third
+second = third
+-: 3: foo=bar
+foo = bar
+-: 4: f1=51
+f1 = 51
+-: 5: f2=52
+f2 = 52
+-: 6: foobar=baz
+foobar = baz
+-: 7: baz=quux
+baz = quux
+-: 8: this=is=a=test
+this = is=a=test
+-: 9: =
+ = 
+-: 10: a=value
+a = value
+-: 11: b=value
+b = value
+-: 12: =value
+ = value
+EXIT_SUCCESS
+==14885== 
+==14885== HEAP SUMMARY:
+==14885==     in use at exit: 967 bytes in 32 blocks
+==14885==   total heap usage: 165 allocs, 133 frees, 5,474 bytes allocated
+==14885== 
+==14885== 967 (32 direct, 935 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+==14885==    at 0x4A076A5: operator new(unsigned long) (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14885==    by 0x405A16: listmap<std::string, std::string, xless<std::string> >::insert(xpair<std::string const, std::string> const&) (listmap.tcc:82)
+==14885==    by 0x404E8E: key_value(std::istream&, listmap<std::string, std::string, xless<std::string> >&, int&, std::string const&) (main.cpp:158)
+==14885==    by 0x405263: main (main.cpp:195)
+==14885== 
+==14885== LEAK SUMMARY:
+==14885==    definitely lost: 32 bytes in 1 blocks
+==14885==    indirectly lost: 935 bytes in 31 blocks
+==14885==      possibly lost: 0 bytes in 0 blocks
+==14885==    still reachable: 0 bytes in 0 blocks
+==14885==         suppressed: 0 bytes in 0 blocks
+==14885== 
+==14885== For counts of detected and suppressed errors, rerun with: -v
+==14885== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)

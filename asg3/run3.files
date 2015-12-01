@@ -1,0 +1,13 @@
+test1.in: 1: a=b
+a = b
+test1.in: 2: key=value
+key = value
+test1.in: 3: this=is a test
+this = is a test
+test1.in: 4: this
+this: key not found
+test1.in: 5: key
+key: key not found
+test1.in: 6: a
+a: key not found
+EXIT_SUCCESS

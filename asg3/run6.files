@@ -1,0 +1,48 @@
+test1.in: 1: a=b
+a = b
+test1.in: 2: key=value
+key = value
+test1.in: 3: this=is a test
+this = is a test
+test1.in: 4: this
+this: key not found
+test1.in: 5: key
+key: key not found
+test1.in: 6: a
+a: key not found
+test2.in: 7: key=value
+key = value
+test2.in: 8: second=third
+second = third
+test2.in: 9: foo=bar
+foo = bar
+test2.in: 10: f1=51
+f1 = 51
+test2.in: 11: f2=52
+f2 = 52
+test2.in: 12: foobar=baz
+foobar = baz
+test2.in: 13: baz=quux
+baz = quux
+test2.in: 14: this=is=a=test
+this = is=a=test
+test2.in: 15: =
+ = 
+test2.in: 16: a=value
+a = value
+test2.in: 17: b=value
+b = value
+test2.in: 18: =value
+ = value
+test3.in: 19: # Comments should be ignored
+test3.in: 20: 
+: key not found
+test3.in: 21: 
+: key not found
+test3.in: 22: also ignore blank lines
+also ignore blank lines: key not found
+test3.in: 23: this file contains nonexistent keys
+this file contains nonexistent keys: key not found
+test3.in: 24: all output should be error messages
+all output should be error messages: key not found
+EXIT_SUCCESS
